@@ -34,14 +34,15 @@ class MyApp extends StatelessWidget {
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 80, vertical: 200),
+                      padding: EdgeInsets.symmetric(vertical: 210),
                       child: Text('Suhu dalam Kelvin'),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 50),
+                      padding: EdgeInsets.only(left: 50),
                       child: Text('Suhu dalam Reamur'),
                     ),
                   ],
