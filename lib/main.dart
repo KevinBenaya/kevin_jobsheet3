@@ -32,18 +32,33 @@ class MyApp extends StatelessWidget {
                   FilteringTextInputFormatter.digitsOnly
                 ],
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 80, vertical: 200),
-                    child: Text('Suhu dalam Kelvin'),
+              Container(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 80, vertical: 200),
+                      child: Text('Suhu dalam Kelvin'),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 50),
+                      child: Text('Suhu dalam Reamur'),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 500,
+                padding: EdgeInsets.only(top: 16),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Konversi Suhu",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 50),
-                    child: Text('Suhu dalam Reamur'),
-                  ),
-                ],
+                ),
               ),
             ],
           ),
