@@ -27,6 +27,10 @@ class MyApp extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: 'Masukkan Suhu Dalam Celcius',
                 ),
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
               ),
             ],
           ),
