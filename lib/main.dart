@@ -71,10 +71,14 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double _inputUser = 0;
+  double _kelvin = 0;
+  double reamur = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
