@@ -30,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _inputUser = 0;
   double _kelvin = 0;
   double _reamur = 0;
+  double _fahrenheit = 0;
 
   kelvin() {
     setState(() {
@@ -42,6 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _inputUser = double.parse(retrive1.text);
       _reamur = (4 / 5) * _inputUser;
+    });
+  }
+
+  fahrenheit() {
+    setState(() {
+      _inputUser = double.parse(retrive1.text);
+      _fahrenheit = ((9 / 5) * _inputUser) + 32;
     });
   }
 
@@ -87,6 +95,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       'Suhu dalam Reamur',
                     ),
                   ),
+                  SizedBox(
+                    width: 100,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 150),
+                    child: Text(
+                      'Suhu dalam Fahrenheit',
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -112,6 +129,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 30),
                     ),
                   ),
+                  SizedBox(
+                    width: 220,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 100),
+                    child: Text(
+                      '$_fahrenheit',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -121,8 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 onPressed: () {
                   kelvin();
-                  retrive1.clear;
                   reamur();
+                  fahrenheit();
+                  retrive1.clear;
                 },
                 child: Text(
                   "Konversi Suhu",
