@@ -12,94 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Konverter Suhu"),
+        title: 'Konversi Suhu',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        body: Container(
-          margin: EdgeInsets.all(8),
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Masukkan Suhu Dalam Celcius',
-                ),
-                keyboardType: TextInputType.number,
-                inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter.digitsOnly
-                ],
-              ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 150),
-                      child: Text(
-                        'Suhu dalam Kelvin',
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 150),
-                      child: Text(
-                        'Suhu dalam Reamur',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 100),
-                      child: Text(
-                        '0',
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 220,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 100),
-                      child: Text(
-                        '0',
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: 500,
-                padding: EdgeInsets.only(top: 16),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Konversi Suhu",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+        home: MyHomePage());
   }
 }
 
@@ -123,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   reamur() {
     setState(() {
       _inputUser = double.parse(retrive1.text);
-      _reamur = 4 ~/ 5 * _inputUser;
+      _reamur = (4 / 5) * _inputUser;
     });
   }
 
@@ -133,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text('Konversi Suhu'),
       ),
       body: Container(
         margin: EdgeInsets.all(8),
@@ -180,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 100),
                     child: Text(
-                      ' : $_kelvin',
+                      '$_kelvin',
                       style: TextStyle(fontSize: 30),
                     ),
                   ),
@@ -190,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 100),
                     child: Text(
-                      ' : $_reamur',
+                      '$_reamur',
                       style: TextStyle(fontSize: 30),
                     ),
                   ),
@@ -201,7 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 500,
               padding: EdgeInsets.only(top: 16),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  kelvin();
+                  retrive1.clear;
+                  reamur();
+                },
                 child: Text(
                   "Konversi Suhu",
                   style: TextStyle(
