@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: EdgeInsets.only(top: 200),
                     child: Text(
                       'Suhu dalam Kelvin',
                     ),
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 100,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: EdgeInsets.only(top: 200),
                     child: Text(
                       'Suhu dalam Reamur',
                     ),
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 100,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 150),
+                    padding: EdgeInsets.only(top: 200),
                     child: Text(
                       'Suhu dalam Fahrenheit',
                     ),
@@ -113,27 +113,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 100),
+                    padding: EdgeInsets.only(top: 10),
                     child: Text(
                       '$_kelvin',
                       style: TextStyle(fontSize: 30),
                     ),
                   ),
                   SizedBox(
-                    width: 220,
+                    width: 210,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 100),
+                    padding: EdgeInsets.only(top: 10),
                     child: Text(
                       '$_reamur',
                       style: TextStyle(fontSize: 30),
                     ),
                   ),
                   SizedBox(
-                    width: 220,
+                    width: 210,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 100),
+                    padding: EdgeInsets.only(top: 10),
                     child: Text(
                       '$_fahrenheit',
                       style: TextStyle(fontSize: 30),
@@ -142,8 +142,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 150,
+            ),
             Container(
-              width: 500,
+              width: 700,
               padding: EdgeInsets.only(top: 16),
               child: ElevatedButton(
                 onPressed: () {
